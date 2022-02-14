@@ -1,0 +1,13 @@
+MVC/ManagerAlif/.vs/*
+MVC/ManagerAlif/.vscode/*
+MVC/ManagerAlif/bin/*
+MVC/ManagerAlif/obj/*
+MVC/ManagerAlif/app.db
+Infrastructure/Shared/obj/*
+Infrastructure/Shared/bin/*
+Infrastructure/Persistence/obj/*
+Infrastructure/Persistence/bin/*
+Domain/obj/*
+Domain/bin/*
+Application/obj/*
+Application/bin/*
