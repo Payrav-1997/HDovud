@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Btw5+mdxXwXzAX+KEWethjC4+ge+J5B/W7WzFzWuVNQHnOu751RTzTe9JlqafpA3EUTBCsUApCaGiM7sEfJKfA==",
+  "dgSpecHash": "tgXgM3fZmZwMYgOknqixxQ7S4sNCSvCY1uD1lPkSeCZhRvwYDCqEVi1L5pRe+RqFVOptdd3GRftc1DKVCta7Vw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\HDovud.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Пайрав\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\Пайрав\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Пайрав\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Пайрав\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Пайрав\\.nuget\\packages\\nlog\\5.0.0-rc2\\nlog.5.0.0-rc2.nupkg.sha512",
     "C:\\Users\\Пайрав\\.nuget\\packages\\nlog.extensions.logging\\5.0.0-rc2\\nlog.extensions.logging.5.0.0-rc2.nupkg.sha512",
     "C:\\Users\\Пайрав\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
