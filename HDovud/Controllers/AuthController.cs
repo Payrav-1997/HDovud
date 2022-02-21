@@ -1,6 +1,8 @@
 ﻿using HDovud.Contract.Servises;
 using HDovud.Entities.Common;
 using HDovud.Entities.Dtos;
+using HDovud.Entities.Dtos.Authentication;
+using HDovud.Entities.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -25,6 +27,12 @@ namespace HDovud.Controllers
         public async Task<Response> RegisterUser(UserForRegistrationDto registrationDto)
         {
             return await _userService.RegisterUserAsync(registrationDto, Request.Headers["origin"]);
+        }
+
+        [HttpPost("login")]
+        public async Task<BaseResponse<AuthenticationResponse>> Login(UserForLoginDto loginDto)
+        {
+            return await _userService.LoginAsync(loginDto);
         }
     }
 }

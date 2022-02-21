@@ -2,6 +2,8 @@
 using HDovud.Contract.Servises;
 using HDovud.Entities.Common;
 using HDovud.Entities.Dtos;
+using HDovud.Entities.Dtos.Authentication;
+using HDovud.Entities.Dtos.User;
 using HDovud.Entities.Errors;
 using System.Net;
 using System.Threading.Tasks;
@@ -15,6 +17,16 @@ namespace HDovud.Service
         public UserService(IUserRepository userRepository)
         {
             this._userRepository = userRepository;
+        }
+
+        public async Task<BaseResponse<AuthenticationResponse>> LoginAsync(UserForLoginDto loginDto)
+        {
+            var user = await _userRepository.GetUserByEmail(loginDto.Email);
+            if(user == null)
+                throw new ExceptionWithStatusCode(HttpStatusCode.NotFound, "Пользователь не найден или не верефицирован!");
+            if(!BCrypt.Net.BCrypt.Verify(loginDto.Password,user.Password))
+                throw new ExceptionWithStatusCode(HttpStatusCode.Conflict, "Пароли не совпадают!");
+            var token = 
         }
 
         public async Task<Response> RegisterUserAsync(UserForRegistrationDto registrationDto,string origin)

@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
+    <Folder Include="Entities\Dtos\User\" />
   </ItemGroup>
 
 </Project>
