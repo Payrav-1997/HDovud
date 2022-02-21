@@ -1,4 +1,5 @@
-﻿using HDovud.Entities.Errors;
+﻿using HDovud.Entities.Common;
+using HDovud.Entities.Errors;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
@@ -31,11 +32,17 @@ namespace HDovud.Middlewares
         {
             context.Response.ContentType = "application/json";
 
-            context.Response.StatusCode = ((ExceptionWithStatusCode)ex).StatusCode;
-            return context.Response.WriteAsync(JsonConvert.SerializeObject(new ErrorDetails
+            switch (ex)
             {
-                Message = ex.InnerException?.Message ?? ex.Message
-            }));
+                case ExceptionWithStatusCode e:
+                    context.Response.StatusCode = 200;
+                    return context.Response.WriteAsync(JsonConvert.SerializeObject(new Response { StatusCode = (int)e.StatusCode, Message = e.Message }));
+                default:
+                    context.Response.StatusCode = 200;
+                    return context.Response.WriteAsync(JsonConvert.SerializeObject(new Response { StatusCode = 500, Message = ex.Message }));
+            }
+
+
         }
     }
 }

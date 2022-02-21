@@ -1,4 +1,5 @@
 ﻿using HDovud.Contract.Repositories;
+using HDovud.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,35 +9,22 @@ namespace HDovud.Repository
 {
     public class BaseRepository<T,TId> : IRepositoryBase<T,TId> where T : class
     {
-        public BaseRepository()
+        private readonly DataContext Context;
+
+        public BaseRepository(DataContext context)
         {
+            this.Context = context;
         }
 
-        public Task CreateAsync(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual async Task CreateAsync(T entity) => await Context.Set<T>().AddAsync(entity);
 
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public void Delete(T entity) => Context.Set<T>().Remove(entity);
 
-        public Task<T> GetById(TId id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<T> GetById(TId id) => await Context.Set<T>().FindAsync(id);
 
-        public Task SaveAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task SaveAsync() => await Context.SaveChangesAsync();
 
-        public void Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public void Update(T entity) => Context.Set<T>().Update(entity);
 
-        void CreateAsync<T>
     }
 }

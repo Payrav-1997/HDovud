@@ -57,3 +57,6 @@ C:\Users\Пайрав\source\repos\HDovud\HDovud\obj\Debug\net5.0\HDovud.dll
 C:\Users\Пайрав\source\repos\HDovud\HDovud\obj\Debug\net5.0\ref\HDovud.dll
 C:\Users\Пайрав\source\repos\HDovud\HDovud\obj\Debug\net5.0\HDovud.pdb
 C:\Users\Пайрав\source\repos\HDovud\HDovud\obj\Debug\net5.0\HDovud.genruntimeconfig.cache
+C:\Users\Пайрав\source\repos\HDovud\HDovud\bin\Debug\net5.0\BCrypt.Net-Core.dll
+C:\Users\Пайрав\source\repos\HDovud\HDovud\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Пайрав\source\repos\HDovud\HDovud\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll

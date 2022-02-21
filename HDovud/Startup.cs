@@ -1,4 +1,5 @@
 using HDovud.Extensions;
+using HDovud.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,9 @@ namespace HDovud
             services.AddControllers();
             services.ConfigureCors();
             services.ConfigureLoggerService();
+            services.ConfigurService();
+            services.ConfigureDataContext(Configuration);
+            services.ConfigureRouting();
 
             services.AddSwaggerGen(c =>
             {

@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.14" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0-rc2" />
@@ -13,9 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Models\" />
     <Folder Include="Configurations\" />
-    <Folder Include="Entities\Dtos\" />
   </ItemGroup>
 
 </Project>
