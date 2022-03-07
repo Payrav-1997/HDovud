@@ -13,5 +13,6 @@ namespace HDovud.Contract.Servises
     {
         Task<Response> RegisterUserAsync(UserForRegistrationDto registrationDto,string origin);
         Task<BaseResponse<AuthenticationResponse>> LoginAsync(UserForLoginDto loginDto);
+        Task<Response> ForgotPassword(ForgotPasswordDto model);
     }
 }

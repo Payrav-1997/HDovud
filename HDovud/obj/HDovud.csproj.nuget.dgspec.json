@@ -1,35 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\HDovud.csproj": {}
+    "/home/payrav/Templates/Пайрав/HDovud/HDovud/HDovud.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\HDovud.csproj": {
+    "/home/payrav/Templates/Пайрав/HDovud/HDovud/HDovud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\HDovud.csproj",
+        "projectUniqueName": "/home/payrav/Templates/Пайрав/HDovud/HDovud/HDovud.csproj",
         "projectName": "HDovud",
-        "projectPath": "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\HDovud.csproj",
-        "packagesPath": "C:\\Users\\Пайрав\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пайрав\\source\\repos\\HDovud\\HDovud\\obj\\",
+        "projectPath": "/home/payrav/Templates/Пайрав/HDovud/HDovud/HDovud.csproj",
+        "packagesPath": "/home/payrav/.nuget/packages/",
+        "outputPath": "/home/payrav/Templates/Пайрав/HDovud/HDovud/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Пайрав\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/payrav/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -40,12 +35,20 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "BCrypt.Net-Core": {
               "target": "Package",
               "version": "[1.6.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.14, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -58,6 +61,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.14, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "NLog.Extensions.Logging": {
               "target": "Package",
@@ -82,6 +89,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.2, 6.0.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

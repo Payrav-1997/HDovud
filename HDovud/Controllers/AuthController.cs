@@ -34,5 +34,8 @@ namespace HDovud.Controllers
         {
             return await _userService.LoginAsync(loginDto);
         }
+        [HttpPost("forgotPassword")]
+        public async Task<Response> ForgotPasswordAsync(ForgotPasswordDto model)=>
+            await _userService.ForgotPassword(model);
     }
 }

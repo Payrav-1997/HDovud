@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HDovud.Entities.Dtos.Authentication;
 
 namespace HDovud.Repository
 {
@@ -22,5 +23,8 @@ namespace HDovud.Repository
         {
             return await Context.Users.FirstOrDefaultAsync(x=>x.Email.Equals(email));
         }
+
+        public async Task<User> ForgotPassword(ForgotPasswordDto model) =>
+            await Context.Users.SingleOrDefaultAsync(x => x.Email == model.Email);
     }
 }

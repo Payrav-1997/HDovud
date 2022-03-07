@@ -2,10 +2,6 @@
 using HDovud.Contract.Servises;
 using HDovud.Repository;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HDovud.Service
 {
@@ -15,6 +11,8 @@ namespace HDovud.Service
         {
             service.AddScoped<IUserService, UserService>();
             service.AddScoped<IUserRepository, UserRepository>();
+            service.AddScoped<IEmailService, EmailService>();
+            service.AddScoped<IJWTService, JWTService>();
         }
     }
 }

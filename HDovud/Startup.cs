@@ -14,7 +14,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Threading.Tasks;
+using HDovud.Entities.Common;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 
 namespace HDovud
 {
@@ -37,6 +44,50 @@ namespace HDovud
             services.ConfigurService();
             services.ConfigureDataContext(Configuration);
             services.ConfigureRouting();
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                string secretKey = "AlifManager12345";
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = true,
+                    ValidIssuer = "test",
+                    ValidateAudience = true,
+                    ValidAudience = "test",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                };
+                options.Events = new JwtBearerEvents
+                {
+                    OnChallenge = context =>
+                    {
+                        context.HandleResponse();
+                        context.Response.StatusCode = 200;
+                        context.Response.ContentType = "application/json";
+                        var response = JsonConvert.SerializeObject(new Response
+                        {
+                            StatusCode = (int)HttpStatusCode.Unauthorized,
+                            Message = "Пользователь не авторизован!"
+                        });
+                        return context.Response.WriteAsync(response);
+                    },
+                    OnForbidden = context =>
+                    {
+                        context.Response.StatusCode = 200;
+                        context.Response.ContentType = "application/json";
+                        var response = JsonConvert.SerializeObject(new Response
+                        {
+                            StatusCode = (int)HttpStatusCode.Forbidden,
+                            Message = "Нет доступа!"
+                        });
+                        return context.Response.WriteAsync(response);
+                    },
+                };
+            });
 
             services.AddSwaggerGen(c =>
             {
